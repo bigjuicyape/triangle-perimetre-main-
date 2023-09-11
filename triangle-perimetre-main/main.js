@@ -18,12 +18,15 @@ function calculate() {
   xC = document.getElementById("xC").value;
   yC = document.getElementById("yC").value;
   // calculating length
-  AB = Math.sqrt((xA - xB) ** 2 + (yA - yB) ** 2);
-  AC = Math.sqrt((xA - xC) ** 2 + (yA - yC) ** 2);
-  BC = Math.sqrt((xB - xC) ** 2 + (yB - yC) ** 2);
+  AB = dist(xA, yA, xB, yB);
+  AC = dist(xA, yA, xC, yC);
+  BC = dist(xB, yB, xC, yC);
   // output
   document.getElementById("AB").innerHTML = AB;
   document.getElementById("AC").innerHTML = AC;
   document.getElementById("BC").innerHTML = BC;
   document.getElementById("Perimeter").innerHTML = AB + AC + BC;
+}
+function dist(x1, y1, x2, y2) {
+  return Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
 }
